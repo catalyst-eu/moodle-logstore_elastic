@@ -71,9 +71,9 @@ class store implements \tool_log\log\writer, \core\log\sql_reader {
      * @return bool
      */
     protected function is_event_ignored(\core\event\base $event): bool {
-        if ((!CLI_SCRIPT or PHPUNIT_TEST) and !$this->logguests) {
+        if ((!CLI_SCRIPT || PHPUNIT_TEST) && !$this->logguests) {
             // Always log inside CLI scripts because we do not login there.
-            if (!isloggedin() or isguestuser()) {
+            if (!isloggedin() || isguestuser()) {
                 return true;
             }
         }
@@ -114,7 +114,7 @@ class store implements \tool_log\log\writer, \core\log\sql_reader {
      * @return \core\event\base
      */
     public function get_log_event($data): \core\event\base {
-        // We need an array to pass to core\event\base::restore()
+        // We need an array to pass to core\event\base::restore().
         $data = (array)$data;
         // Decode any "other" data.
         $data['other'] = self::decode_other($data['other']);
@@ -147,7 +147,7 @@ class store implements \tool_log\log\writer, \core\log\sql_reader {
      * @return bool true means new log events can be added, false means no new data can be added.
      */
     public function is_logging(): bool {
-        if (!$this->is_elasticsearch_ready()) {;
+        if (!$this->is_elasticsearch_ready()) {
             return false;
         }
 

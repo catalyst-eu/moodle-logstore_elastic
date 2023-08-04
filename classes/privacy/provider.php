@@ -74,7 +74,7 @@ class provider implements
             $sql[] = '?';
             $params[] = $record->contextid;
         }
-        $contextlist->add_from_sql(implode(',',$sql), $params);
+        $contextlist->add_from_sql(implode(',', $sql), $params);
 
         return $contextlist;
     }
@@ -91,13 +91,13 @@ class provider implements
         $response = $elasticsearch->es_query_recordset($query);
         $userids = [];
         foreach ($response as $record) {
-            if (!is_null($record->userid)){
+            if (!is_null($record->userid)) {
                 $userids[] = $record->userid;
             }
-            if (!is_null($record->realuser)){
+            if (!is_null($record->realuser)) {
                 $userids[] = $record->realuser;
             }
-            if (!is_null($record->relateduserid)){
+            if (!is_null($record->relateduserid)) {
                 $userids[] = $record->relateduserid;
             }
         }
@@ -121,7 +121,7 @@ class provider implements
             $sql[] = '?';
             $params[] = $record->contextid;
         }
-        $contextlist->add_from_sql(implode(',',$sql), $params);
+        $contextlist->add_from_sql(implode(',', $sql), $params);
     }
 
     /**
@@ -137,13 +137,13 @@ class provider implements
         $response = $elasticsearch->es_query_recordset($query);
         $userids = [];
         foreach ($response as $record) {
-            if (!is_null($record->userid)){
+            if (!is_null($record->userid)) {
                 $userids[] = $record->userid;
             }
-            if (!is_null($record->realuser)){
+            if (!is_null($record->realuser)) {
                 $userids[] = $record->realuser;
             }
-            if (!is_null($record->relateduserid)){
+            if (!is_null($record->relateduserid)) {
                 $userids[] = $record->relateduserid;
             }
         }
