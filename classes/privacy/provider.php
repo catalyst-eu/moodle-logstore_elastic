@@ -36,7 +36,12 @@ class provider implements
         \tool_log\local\privacy\logstore_provider,
         \tool_log\local\privacy\logstore_userlist_provider {
 
-
+    /**
+     * Get information about the user data stored by this plugin.
+     *
+     * @param  collection $collection An object for storing metadata.
+     * @return collection The metadata.
+     */
     public static function get_metadata(collection $collection): collection {
         $collection->add_external_location_link(
             'elasticsearch',
